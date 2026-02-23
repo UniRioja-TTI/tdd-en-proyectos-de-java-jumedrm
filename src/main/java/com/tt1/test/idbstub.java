@@ -7,5 +7,5 @@ public interface idbstub {
     void añadirEmail(String email);
     Set<String> obtenerEmails();
     void actualizarToDo(ToDo todo); 
-    void eliminarToDo(String nombre) ; 
+    void eliminarToDo(String nombre) ;     
 }
