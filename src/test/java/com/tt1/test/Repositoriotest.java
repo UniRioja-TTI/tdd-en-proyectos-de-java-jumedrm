@@ -11,15 +11,19 @@ class RepositorioTest {
 
     @BeforeEach
     void setUp() {
-        // arrange
         dbMock = new dbstubmock();
         repositorio = new Repositorio(dbMock);
     }
 
     @Test
     void testGuardarTareaLlamaDB() {
+        // arrange
         ToDo todo = new ToDo();
-        // act & assert (esperamos que falle por la excepción en Repositorio)
-        assertThrows(UnsupportedOperationException.class, () -> repositorio.guardarTarea(todo));
+        
+        // act
+        repositorio.guardarTarea(todo); // esto lanzará la excepción y el test fallará
+        
+        // assert
+        assertTrue(dbMock.insertado);
     }
 }
