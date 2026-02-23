@@ -13,13 +13,15 @@ public class ToDo {
         
     }
 
-    public String getNombre() {
-        throw new UnsupportedOperationException("clase aún no implementada.");
-    }
-
-    public void setNombre(String nombre) {
-        throw new UnsupportedOperationException("clase aún no implementada.");
-    }
+//    public String getNombre() {
+//        throw new UnsupportedOperationException("clase aún no implementada.");
+//    }
+//
+//    public void setNombre(String nombre) {
+//        throw new UnsupportedOperationException("clase aún no implementada.");
+//    }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
 
     public String getDescripcion() {
         throw new UnsupportedOperationException("clase aún no implementada.");
