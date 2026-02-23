@@ -1,6 +1,5 @@
 package com.tt1.test;
 
-
 public class Repositorio implements irepositorio {
     private idbstub db;
 
@@ -9,11 +8,24 @@ public class Repositorio implements irepositorio {
     }
 
     @Override
-    public ToDo buscarPorNombre(String nombre) { throw new UnsupportedOperationException("clase aún no implementada."); }
+    public void guardarTarea(ToDo todo) { db.insertarToDo(todo); }
+
     @Override
-    public void completarTarea(String nombre) { throw new UnsupportedOperationException("clase aún no implementada."); }
+    public void guardarEmail(String email) { db.añadirEmail(email); }
+
     @Override
-    public void guardarTarea(ToDo todo) { throw new UnsupportedOperationException("clase aún no implementada."); }
+    public ToDo buscarPorNombre(String nombre) {
+        return db.obtenerTodos().stream()
+                .filter(t -> t.getNombre().equals(nombre))
+                .findFirst().orElse(null);
+    }
+
     @Override
-    public void guardarEmail(String email) { throw new UnsupportedOperationException("clase aún no implementada."); }
+    public void completarTarea(String nombre) {
+        ToDo t = buscarPorNombre(nombre);
+        if (t != null) {
+            t.setCompletado(true);
+            db.actualizarToDo(t);
+        }
+    }
 }

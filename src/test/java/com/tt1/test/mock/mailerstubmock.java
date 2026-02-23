@@ -7,7 +7,7 @@ public class mailerstubmock implements imailerstub {
 
     @Override
     public boolean enviarCorreo(String destino, String mensaje) {
-        this.llamado = true; // marcamos que el método se usó
+        this.llamado = true; 
         return true; 
     }
 }

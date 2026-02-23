@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import com.tt1.test.mock.repositoriomock;
 import com.tt1.test.mock.mailerstubmock;
 
-class ServicioTest {
+class Serviciotest {
     private Servicio servicio;
     private repositoriomock repoMock;
     private mailerstubmock mailerMock;
@@ -24,7 +24,7 @@ class ServicioTest {
         // act
         servicio.agregarEmail("test@example.com");
         
-        // en tdd, esto fallará primero porque el método lanza UnsupportedOperationException
+        
         assertDoesNotThrow(() -> servicio.agregarEmail("test@example.com"));
     }
 }

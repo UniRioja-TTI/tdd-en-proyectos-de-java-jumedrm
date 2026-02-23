@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import com.tt1.test.mock.dbstubmock;
 
-class RepositorioTest {
+class Repositoriotest {
     private Repositorio repositorio;
     private dbstubmock dbMock;
 
@@ -21,7 +21,7 @@ class RepositorioTest {
         ToDo todo = new ToDo();
         
         // act
-        repositorio.guardarTarea(todo); // esto lanzará la excepción y el test fallará
+        repositorio.guardarTarea(todo); 
         
         // assert
         assertTrue(dbMock.insertado);
